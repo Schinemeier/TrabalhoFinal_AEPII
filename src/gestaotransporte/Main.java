@@ -17,18 +17,43 @@ public class Main {
 		opcao = scanner.nextInt();
 		
 		switch (opcao) {
-		case 1:
-			//
+		case 1://LISTAR
+			if(entidade == "CLIENTE") {
+				
+			}else if(entidade == "MOTORISTA") {
+				
+			}else if(entidade == "PRODUTO") {
+				
+			}
 			break;
-		case 2:
-			//
+			
+		case 2://CADASTRAR
+			if(entidade == "CLIENTE") {
+				
+			}else if(entidade == "MOTORISTA") {
+				
+			}else if(entidade == "PRODUTO") {
+				
+			}
 			break;
-		case 3:
-			//
+		case 3://EDITAR
+			if(entidade == "CLIENTE") {
+				
+			}else if(entidade == "MOTORISTA") {
+				
+			}else if(entidade == "PRODUTO") {
+				
+			}
 			
 			break;
-		case 4:
-			//
+		case 4://REMOVER
+			if(entidade == "CLIENTE") {
+				
+			}else if(entidade == "MOTORISTA") {
+				
+			}else if(entidade == "PRODUTO") {
+				
+			}
 			break;
 
 		case 0:
