@@ -25,6 +25,7 @@ public class Main {
 			break;
 		case 3:
 			//
+			
 			break;
 		case 4:
 			//
@@ -41,6 +42,7 @@ public class Main {
 		scanner.close();
 		
 	}
+	
 	
 	public static void viagens() {
 		Scanner scanner = new Scanner(System.in);
