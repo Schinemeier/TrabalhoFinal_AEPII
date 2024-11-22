@@ -18,42 +18,16 @@ public class Main {
 		
 		switch (opcao) {
 		case 1://LISTAR
-			if(entidade == "CLIENTE") {
-				
-			}else if(entidade == "MOTORISTA") {
-				
-			}else if(entidade == "PRODUTO") {
-				
-			}
+			opcao("LISTAR", entidade);
 			break;
-			
 		case 2://CADASTRAR
-			if(entidade == "CLIENTE") {
-				
-			}else if(entidade == "MOTORISTA") {
-				
-			}else if(entidade == "PRODUTO") {
-				
-			}
+			opcao("CADASTRAR", entidade);
 			break;
 		case 3://EDITAR
-			if(entidade == "CLIENTE") {
-				
-			}else if(entidade == "MOTORISTA") {
-				
-			}else if(entidade == "PRODUTO") {
-				
-			}
-			
+			opcao("EDITAR", entidade);
 			break;
 		case 4://REMOVER
-			if(entidade == "CLIENTE") {
-				
-			}else if(entidade == "MOTORISTA") {
-				
-			}else if(entidade == "PRODUTO") {
-				
-			}
+			opcao("REMOVER", entidade);
 			break;
 
 		case 0:
@@ -68,6 +42,21 @@ public class Main {
 		
 	}
 	
+	public static void opcao(String escolha, String entidade) {
+		switch (entidade) {
+		case "CLIENTE":
+			GerenciarCliente.intermediar(escolha);
+			break;
+		
+		case "MOTORISTA":
+			GerenciarMotorista.intermediar(escolha);
+			break;
+
+		case "PRODUTO":
+			GerenciarProduto.intermediar(escolha);
+			break;
+		}
+	}
 	
 	public static void viagens() {
 		Scanner scanner = new Scanner(System.in);

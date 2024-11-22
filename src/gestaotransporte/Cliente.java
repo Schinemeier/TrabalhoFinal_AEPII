@@ -1,19 +1,10 @@
 package gestaotransporte;
+import java.io.Serializable;
+
+import java.util.Scanner;
 
 public class Cliente {
-	public void listar() {
-		
-	}
+	Scanner scanner = new Scanner(System.in);
 	
-	public void cadastrar() {
-		
-	}
-	
-	public void editar() {
-		
-	}
-		
-	public void remover() {
-		
-	}
+
 }

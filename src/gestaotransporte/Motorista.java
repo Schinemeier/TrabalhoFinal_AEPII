@@ -1,21 +1,9 @@
 package gestaotransporte;
 
 public class Motorista {
-
-	public void listar() {
-		
-	}
+	protected String cnh;
+	//this.cnh = cnh;
 	
-	public void cadastrar() {
-		
-	}
 	
-	public void editar() {
-		
-	}
-		
-	public void remover() {
-		
-	}
 	
 }
