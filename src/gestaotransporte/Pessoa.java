@@ -2,7 +2,7 @@ package gestaotransporte;
 import java.io.Serializable;
 
 
-public class Pessoa {
+public class Pessoa implements Serializable{
 	protected Integer id = 1000;
 	protected String nome;
 	protected String cpf;
@@ -11,11 +11,13 @@ public class Pessoa {
 	
 	
 	public Pessoa(String nome, String cpf, String cidade) {
-		this.id += 1;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.cidade = cidade;
-		
 	}
 	
+	public void geraId(){
+		this.id += 1;
+	}
+
 }
