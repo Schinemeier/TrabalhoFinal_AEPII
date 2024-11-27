@@ -1,9 +1,69 @@
 package gestaotransporte;
 
 public class Motorista {
-	protected String cnh;
-	//this.cnh = cnh;
-	
-	
-	
+    private static int contadorId = 1;
+    private int id;
+    private String nome;
+    private String cpf;
+    private String cnh;
+    private String cidade;
+    private boolean ocupado;
+
+    public Motorista(String nome, String cpf, String cnh, String cidade) {
+        this.id = contadorId++;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.cnh = cnh;
+        this.cidade = cidade;
+        this.ocupado = false;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getCnh() {
+        return cnh;
+    }
+
+    public void setCnh(String cnh) {
+        this.cnh = cnh;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public boolean isOcupado() {
+        return ocupado;
+    }
+
+    public void setOcupado(boolean ocupado) {
+        this.ocupado = ocupado;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + id + ", Nome: " + nome + ", CPF: " + cpf + ", CNH: " + cnh + ", Cidade: " + cidade + ", Ocupado: " + ocupado;
+    }
 }

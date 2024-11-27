@@ -1,12 +1,15 @@
 package gestaotransporte;
-import java.io.Serializable;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class GerenciarCliente implements Serializable {
-	
+	private List<Pessoa> clientes = new ArrayList<>();
+	private int contadorId = 1000;
 
-	public static void intermediar(String escolha) {
+	public void intermediar(String escolha) {
 		switch (escolha) {
 		case "LISTAR":
 			listar();
@@ -26,16 +29,23 @@ public class GerenciarCliente implements Serializable {
 		}
 	}
 	
-	public static void listar() {
+	public void listar() {
 		SalvarCarregar.carregar();
-		//System.out.println();
-		//System.out.println(Pessoa.cidade);
+		if(clientes.isEmpty()){
+			System.out.println("Nenhum cliente cadastrado");
+		}else{
+			System.out.println("Lista de clientes: ");
+			for(Pessoa cliente : clientes){
+				System.out.println(cliente);
+			} 
+		}
 			
 	}
 	
-	public static void cadastrar() {
+	public void cadastrar() {
 		Scanner scanner = new Scanner(System.in);
-		Pessoa[] cliente = new Pessoa[1];
+		//Pessoa[] cliente = new Pessoa[1];
+		
 		Integer tamanhoArray = 0;
 
 		System.out.println("Digite o nome: ");
@@ -48,9 +58,10 @@ public class GerenciarCliente implements Serializable {
 		String cidade = scanner.nextLine();
 		
 		scanner.close();
-				
-		cliente[tamanhoArray] = new Pessoa(nome, cpf, cidade);
-		SalvarCarregar.salvar(cliente);
+		Pessoa cliente = new Pessoa(nome, cpf, cidade);
+		clientes.add(cliente);
+		//cliente[tamanhoArray] = new Pessoa(nome, cpf, cidade);
+		//SalvarCarregar.salvar(cliente);
 
 		tamanhoArray ++;
 	}

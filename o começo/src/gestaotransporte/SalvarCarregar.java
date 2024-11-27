@@ -18,7 +18,7 @@ public class SalvarCarregar implements Serializable {
 		private int idade;
 	}*/
 	
-	public static void salvar(Pessoa[] pessoa) {
+	/*public static void salvar(Pessoa[] pessoa) {
 		String arquivo = "database.dat";
 			try(FileOutputStream fos = new FileOutputStream(arquivo,true);
 			AppendingObjectOutputStream oos = new AppendingObjectOutputStream(fos)){
@@ -30,7 +30,7 @@ public class SalvarCarregar implements Serializable {
 				e.printStackTrace();
 			}
 			carregar();
-	}
+	}*/
 		
 	public static void carregar() {
 		String arquivo = "database.dat";

@@ -11,6 +11,7 @@ public class Pessoa implements Serializable{
 	
 	
 	public Pessoa(String nome, String cpf, String cidade) {
+		//geraId();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.cidade = cidade;

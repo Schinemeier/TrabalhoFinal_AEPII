@@ -1,133 +1,49 @@
 package gestaotransporte;
+
 import java.util.Scanner;
 
 public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-	public static void subMenu(String entidade) {
-		Scanner scanner = new Scanner(System.in);
-		int opcao;
-		do {
-		System.out.println("1 - LISTAR " + entidade);
-		System.out.println("2 - CADASTRAR " + entidade);
-		System.out.println("3 - EDITAR " + entidade);
-		System.out.println("4 - REMOVER " + entidade);
-		System.out.println("0 - VOLTAR");
-		System.out.println();
-		
-		opcao = scanner.nextInt();
-		
-		switch (opcao) {
-		case 1://LISTAR
-			opcao("LISTAR", entidade);
-			break;
-		case 2://CADASTRAR
-			opcao("CADASTRAR", entidade);
-			break;
-		case 3://EDITAR
-			opcao("EDITAR", entidade);
-			break;
-		case 4://REMOVER
-			opcao("REMOVER", entidade);
-			break;
+        GerenciamentoCliente gerenciamentoCliente = new GerenciamentoCliente();
+        GerenciamentoMotorista gerenciamentoMotorista = new GerenciamentoMotorista();
+        GerenciamentoProduto gerenciamentoProduto = new GerenciamentoProduto();
+        GerenciamentoViagem gerenciamentoViagem = new GerenciamentoViagem(gerenciamentoCliente, gerenciamentoMotorista, gerenciamentoProduto);
 
-		case 0:
-			return;
-		default:
-			System.out.println("OPCAO INVALIDA! TENTE NOVAMENTE.\n");
-			break;
-		}
-		
-		}while(opcao != 0);
-		scanner.close();
-		
-	}
-	
-	public static void opcao(String escolha, String entidade) {
-		switch (entidade) {
-		case "CLIENTE":
-			GerenciarCliente.intermediar(escolha);
-			break;
-		
-		case "MOTORISTA":
-			GerenciarMotorista.intermediar(escolha);
-			break;
+        int opcao;
+        do {
+            System.out.println("\n=== Sistema de Gestão de Transporte de Carga ===");
+            System.out.println("1. Gerenciar Clientes");
+            System.out.println("2. Gerenciar Motoristas");
+            System.out.println("3. Gerenciar Produtos");
+            System.out.println("4. Gerenciar Viagens");
+            System.out.println("5. Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine(); // Limpar buffer
 
-		case "PRODUTO":
-			GerenciarProduto.intermediar(escolha);
-			break;
-		}
-	}
-	
-	public static void viagens() {
-		Scanner scanner = new Scanner(System.in);
-		int opcao;
-		do {
-		System.out.println("1 - INICIAR VIAGEM");
-		System.out.println("2 - FINALIZAR VIAGEM");
-		System.out.println("0 - VOLTAR");
-		System.out.println();
-		
-		opcao = scanner.nextInt();
-		
-		switch(opcao) {
-		case 1:
-			//
-			break;
-		case 2:
-			//
-			break;
-		case 0:
-			return;
-		default:
-			System.out.println("OPCAO INVALIDA! TENTE NOVAMENTE.\n");
-			break;
-		}
-		}while(opcao != 0);
-		scanner.close();
-	}
-	
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int opcao;
-		System.out.println("GESTÃO DE TRANSPORTADORA");
+            switch (opcao) {
+                case 1:
+                    gerenciamentoCliente.menu(scanner);
+                    break;
+                case 2:
+                    gerenciamentoMotorista.menu(scanner);
+                    break;
+                case 3:
+                    gerenciamentoProduto.menu(scanner);
+                    break;
+                case 4:
+                    gerenciamentoViagem.menu(scanner);
+                    break;
+                case 5:
+                    System.out.println("Saindo do sistema...");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        } while (opcao != 5);
 
-		do {
-		System.out.println("MENU:");
-		System.out.println("1 - GERENCIAR CLIENTE");
-		System.out.println("2 - GERENCIAR MOTORISTA");
-		System.out.println("3 - GERENCIAR PRODUTO");
-		System.out.println("4 - GERENCIAR VIAGENS");
-		System.out.println("0 - SAIR");
-		System.out.println();
-		opcao = scanner.nextInt();
-		
-		switch (opcao) {
-		case 1:
-			subMenu("CLIENTE");
-			break;
-		case 2:
-			subMenu("MOTORISTA");
-			break;
-		case 3:
-			subMenu("PRODUTO");
-			break;
-		case 4:
-			viagens();
-			break;
-
-		case 0:
-			System.exit(0);
-			break;
-	
-		default:
-			System.out.println("OPCAO INVALIDA! TENTE NOVAMENTE.\n");
-			break;
-		}
-		
-		}while(opcao != 0);
-		scanner.close();
-	}
-	
-
-
+        //scanner.close();
+    }
 }
