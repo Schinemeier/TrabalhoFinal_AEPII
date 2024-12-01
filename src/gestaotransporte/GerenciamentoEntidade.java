@@ -8,7 +8,7 @@ public abstract class GerenciamentoEntidade<T> {
 
     public void listarEntidades() {
         if (entidades.isEmpty()) {
-            System.out.println("Nenhuma entidade cadastrada.");
+            System.out.println("Nenhum cadastro encontrado.");
         } else {
             entidades.forEach(System.out::println);
         }
